@@ -77,9 +77,6 @@ function displayNumbers(fbArray){
         rowCols[4].classList.add(fbArray[i + 4]);
         rowCols[4].textContent = fbArray[i + 4];
 
-
         tableBody.appendChild(tableRow);
-
     }
-
 }
