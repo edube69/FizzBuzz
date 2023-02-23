@@ -3,20 +3,20 @@
 function getValues(){
 
     // Get values from the page
-    let startValue = document.getElementById("startValue").value;
-    let endValue =  document.getElementById("endValue").value;
+    let FizzValue = document.getElementById("FizzValue").value;
+    let BuzzValue =  document.getElementById("BuzzValue").value;
 
     // We need to validate our input
     // parse into integers
-    startValue = parseInt(startValue);
-    endValue = parseInt(endValue);
+    FizzValue = parseInt(FizzValue);
+    BuzzValue = parseInt(BuzzValue);
         
-    if(Number.isInteger(startValue) && Number.isInteger(endValue)){
+    if(Number.isInteger(FizzValue) && Number.isInteger(BuzzValue)){
         // Call generateNumbers
-        let numbers = generateValues(startValue, endValue);
+        let numbers = generateValues(1, 100);
 
         // Call displayNumbers
-        displayNumbers(numbers);
+        displayNumbers(numbers, FizzValue, BuzzValue);
     }else{
         alert("You must enter integers");
     }
@@ -35,16 +35,16 @@ function generateValues(sValue, eValue){
 
 // Display the numbers and mark the FizzBuzz
 // Display or view function
-function displayNumbers(numbers){
+function displayNumbers(numbers, FizzValue, BuzzValue){
     let templateRows = "";
     for (let i = 0; i < numbers.length; i++){
         let FizzBuzz = "";
         let number = numbers[i];
-        if(number % 3 == 0 && number % 5 ==0){
+        if(number % FizzValue == 0 && number % BuzzValue == 0){
             FizzBuzz = "FizzBuzz";
-        }else if(number % 3 == 0){
+        }else if(number % FizzValue == 0){
             FizzBuzz = "Fizz";
-        }else if(number % 5 == 0){
+        }else if(number % BuzzValue == 0){
             FizzBuzz = "Buzz";
         }else{
             FizzBuzz = number;
